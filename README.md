@@ -1,5 +1,6 @@
-#libr
-libr installs an npm package and all its dependencies as a single module.
+# install-lib
+install-lib installs an npm package and all its dependencies as a single 
+module.
 
 ### Why?
 Have you ever opened your node_modules folder? It's crazy - why is there a 

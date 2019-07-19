@@ -1,6 +1,6 @@
 {
   "name": "install-lib",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "Install a module and its dependencies as a single module",
   "repository": "git@github.com:daleblackwood/install-lib.git",
   "main": "index.js",

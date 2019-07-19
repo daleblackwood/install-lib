@@ -1,0 +1,15 @@
+{
+  "name": "libr",
+  "version": "1.0.0",
+  "description": "Install a module and its dependencies as a single module",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "Dale Williams",
+  "license": "MIT",
+  "dependencies": {
+    "argparse": "^1.0.10",
+    "fs-extra": "^8.1.0"
+  }
+}

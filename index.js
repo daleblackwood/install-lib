@@ -53,20 +53,17 @@ function runProcess(name, command, args = [], options = {}) {
     });
 }
 
-function printHelp() {
-	console.log("to run: npx libr [npm path] [module name]\n" + 
-		"  npm path: 				the npm package to install\n" +
-		"  module name: (optional) 	the filesystem package name\n" +
-		"							(defaults to last of npm path)\n");
-}
+const HELP = ("run: npx install-lib [npm path]\n" + 
+    "  npm path: the npm package to install\n");
 
 async function run() {
     const parser = new ArgumentParser({
         version: packageJson.version,
         addHelp: true,
-        description: packageJson.description
+        description: packageJson.description,
     });
     parser.addArgument("package", {
+        name: "package",
         description: "the npm package to install"
     });
     parser.addArgument(["--name", "-n"], {
@@ -77,12 +74,19 @@ async function run() {
         description: "the folder to write to",
         defaultValue: "node_libs"
     });
-    const args = parser.parseArgs();
+    let args;
+    console.log(HELP);
+    try {
+        args = parser.parseArgs();
+    }
+    catch (e) {
+        console.log(e, HELP);
+        process.exit(1)
+    }
 
 	const package = args.package;
 	if (typeof package !== "string" || package.length < 1) {
-		console.error("Couldn't understand package.");
-		printHelp();
+		console.error("Couldn't understand package.", HELP);
 		process.exit(1);
 	}
 

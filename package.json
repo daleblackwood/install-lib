@@ -1,6 +1,6 @@
 {
   "name": "install-lib",
-  "version": "1.0.6",
+  "version": "1.0.7",
   "description": "Install a module and its dependencies as a single module",
   "repository": "git@github.com:daleblackwood/install-lib.git",
   "main": "./index.js",
@@ -14,7 +14,9 @@
   "author": "Dale Williams",
   "license": "MIT",
   "dependencies": {
-    "argparse": "^1.0.10",
     "fs-extra": "^8.1.0"
-  }
+  },
+  "libs": [
+    "apollo-server"
+  ]
 }

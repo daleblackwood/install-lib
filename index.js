@@ -27,7 +27,7 @@ function runProcess(name, command, args = [], options = {}) {
         }
 
         if (options.mute !== true) {
-            console.log("\n - - - - - -\n Starting process " + name + (cwd ? " in " + cwd : "") + "...\n - - - - - -\n");
+            console.log("\nRunning " + name + "...\n\n");
             console.log(" > " + command + " " + args.join(" "));
         }
         const ls = spawn(command, args || [], {
@@ -42,7 +42,7 @@ function runProcess(name, command, args = [], options = {}) {
         });
         ls.on("close", code => {
             if (options.mute !== true) {
-                console.log("Process " + name + " closed (" + code + ")\n - - - - - -\n");
+                console.log("Completed " + name + " (" + code + ")\n - - - - - -\n");
             }
             if (options.onExit) {
                 options.onExit();
@@ -73,7 +73,7 @@ async function run() {
     });
     parser.addArgument(["--out", "-o"], {
         description: "the folder to write to",
-        defaultValue: "node_libs"
+        defaultValue: "node_modules"
     });
     let args;
     console.log(HELP);
@@ -97,7 +97,7 @@ async function run() {
 	if ((await fs.exists(tempDir)) === false) {
 		await fs.mkdir(tempDir);
     }
-    const outName = args.out || "node_libs";
+    const outName = args.out || "node_modules";
 	const outDirParent = path.join(process.cwd(), outName);
 	if ((await fs.exists(outDirParent)) === false) {
 		await fs.mkdir(outDirParent);
@@ -110,7 +110,7 @@ async function run() {
 	);
 	await runProcess(
 		"Install package", 
-		"npm", ["i", package], 
+		"npm", ["i", package, "--save"], 
 		{ cwd: tempDir }
 	);
 	await runProcess(

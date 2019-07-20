@@ -8,12 +8,23 @@ package called _has_? Who made it? Who cares? If that's you, this package
 might help.
 
 ### Usage
-It's easy, tp add a package just use:
+It's easy, and works just like npm.
+
+To add a package just use:
 `npx install-lib [npm package]`
 
 And to install all listed packages use:
-`npm install-lib`
+`npx install-lib`
+
+You can then use the package as a regular node module, install types, do
+all the stuff that it makes sense to do.
 
 There's no need to install it, just run it with npx.
 Modules are exported to the node_modules directory, and appended to the 
 package.json in the folder it's ran in.
+
+### No Issues
+This thing is new, and no issues have been discovered, which means it's
+perfect. If you find something wrong, let me know or request a PR
+yourself.
+

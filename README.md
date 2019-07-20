@@ -1,3 +1,5 @@
+[![npm version](https://badge.fury.io/js/install-lib.svg)](https://badge.fury.io/js/install-lib)
+
 # install-lib
 install-lib installs an npm package and all its dependencies as a single 
 module.
@@ -23,8 +25,10 @@ There's no need to install it, just run it with npx.
 Modules are exported to the node_modules directory, and appended to the 
 package.json in the folder it's ran in.
 
+### Underlying tech
+This package makes heavy use of npx and the awesome @zeit/ncc.
+
 ### No Issues
 This thing is new, and no issues have been discovered, which means it's
 perfect. If you find something wrong, let me know or request a PR
 yourself.
-

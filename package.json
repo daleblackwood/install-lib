@@ -3,7 +3,8 @@
   "version": "1.0.4",
   "description": "Install a module and its dependencies as a single module",
   "repository": "git@github.com:daleblackwood/install-lib.git",
-  "main": "index.js",
+  "main": "./index.js",
+  "bin": "./index.js",
   "scripts": {
     "build": "node ./",
     "start": "node ./",

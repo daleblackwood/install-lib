@@ -1,3 +1,4 @@
+#!/usr/bin/env node
 const ArgumentParser = require("argparse").ArgumentParser;
 const path = require("path");
 const fs = require("fs-extra");
